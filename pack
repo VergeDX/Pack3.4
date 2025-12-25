@@ -102,7 +102,7 @@ do_pack_linux()
 		IMG_NAME="${PACK_BOARD}"
 		IMG_NAME="${OUT_DIR}/$CUSTOM_INFO/${IMG_NAME}.img"
 		echo "imagename = $IMG_NAME" >> ${OUT_DIR}/$CUSTOM_INFO/output_$PACK_BOARD/image.cfg
-		echo "" >> $${OUT_DIR}/$CUSTOM_INFO/output_$PACK_BOARD/image.cfg
+		echo "" >> ${OUT_DIR}/$CUSTOM_INFO/output_$PACK_BOARD/image.cfg
 		
     cd ${OUT_DIR}/$CUSTOM_INFO/output_$PACK_BOARD/
 		 
@@ -142,7 +142,7 @@ do_pack_linux()
 		
     update_mbr sys_partition.bin  1
 
-    ln -s boot.img boot.fex
+    ln -sf boot.img boot.fex
     ln -s rootfs_squashfs.img rootfs_squashfs.fex
 		
 		merge_package full_img.fex boot0_spinor.fex u-boot-spinor.fex sunxi_mbr.fex sys_partition.bin
